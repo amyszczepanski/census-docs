@@ -14,7 +14,7 @@ These instructions are well tested to connect Census to Redshift. If you're runn
 
 Census reads data from one or more tables \(possibly across different schemata\) in your database and publishes it to the corresponding objects in external systems such as Salesforce. To limit the load on your database as well as to other apps' APIs, Census computes a “diff” to determine changes between each update. In order to compute these diffs, Census creates and writes to a set of tables to a private bookkeeping schema \(2 or 3 tables for each sync job configured\).
 
-We recommend you create a dedicated `CENSUS` user account with a strong, unique password. Census uses this account to connect to your Redshift warehiyse. In order for the Census connection to work correctly, the `CENSUS` account must have these permissions:
+We recommend you create a dedicated `CENSUS` user account with a strong, unique password. Census uses this account to connect to your Redshift warehouse. In order for the Census connection to work correctly, the `CENSUS` account must have these permissions:
 
 * The ability to create the `CENSUS` schema and full admin access to all tables within that schema \(including creating tables, deleting tables, and reading and writing to all tables\).
 * Read-only access to any tables and views in any schemata that you would like Census to publish to your service destinations.
